@@ -24,9 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText temp;
     TextView result;
-    RadioGroup radioGroup;
-    RadioButton celsius;
-    RadioButton far;
     TextView text1;
     TextView text2;
 
@@ -40,14 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
         temp = (EditText) findViewById(R.id.etCelsius);
         result = (TextView) findViewById(R.id.tvResult);
-        celsius = (RadioButton) findViewById(R.id.btnCelsius);
-        celsius.setChecked(true);
-        far = (RadioButton) findViewById(R.id.btnFar);
         text1 = (TextView) findViewById(R.id.tvGrades);
         text2 = (TextView) findViewById(R.id.tvFar);
     }
 
     double value;
+    boolean cF = true;
 
     public static double calcolaTemperaturaC (double value){
         return (value*9/5)+32;
@@ -62,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d("clicked", "Converti clicked");
 
 
-        if (temp.getText().toString().equals("")) {
+        if (temp.getText().toString().isEmpty()) {
             Toast toast = Toast.makeText(getApplicationContext(), "Inserire una temperatura", Toast.LENGTH_LONG);
             toast.show();
         }
-        //TODO: controllo valori nulli
-        else if (text1.getText().toString().equals("Celsius°:")){
+
+        else if (cF){
             value = Double.parseDouble(temp.getText().toString());
             double ris = calcolaTemperaturaC(value);
             double risF = Math.floor(ris * 100) / 100;
@@ -82,36 +77,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    public void onRadioButtonClicked(View view) {
-
-        Log.d("onRadioButtonClicked0", "Radio Button clicked");
-
-        boolean checked = ((RadioButton) view).isChecked();
-
-        if(view.getId()==far.getId()){
-
-            if(!temp.getText().equals(""))
-                temp.setText("");
-
-            if(! result.getText().equals(""))
-                result.setText("");
-
+    public void scambia(View view) {
+        if(cF){
+            temp.setHint("°F");
             text1.setText("Fahrenheit°:");
             text2.setText("Celsius°:");
-            temp.setHint("°F");
+            cF = false;
         }
         else{
-
-            if(!temp.getText().equals(""))
-                temp.setText("");
-
-            if(! result.getText().equals(""))
-                result.setText("");
-
-            text1.setText("Celsius°:");
-            text2.setText("Fahrenheit°:");
             temp.setHint("°C");
+            text2.setText("Fahrenheit°:");
+            text1.setText("Celsius°:");
+            cF = true;
         }
     }
-
 }

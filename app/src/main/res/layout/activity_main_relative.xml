@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutR"
     android:layout_width="match_parent"
@@ -51,7 +52,7 @@
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnGroup"
+        android:layout_below="@+id/imageView"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="50dp"
@@ -77,38 +78,6 @@
 
     </LinearLayout>
 
-    <RadioGroup
-        android:id="@+id/btnGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvTitle"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="50dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/btnCelsius"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:fontFamily="@font/alegreya_sc_italic"
-            android:onClick="onRadioButtonClicked"
-            android:text="@string/cF"
-            android:textAlignment="viewEnd"
-            android:textSize="25sp" />
-
-        <RadioButton
-            android:id="@+id/btnFar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/alegreya_sc_italic"
-            android:onClick="onRadioButtonClicked"
-            android:text="@string/fC"
-            android:textSize="25sp" />
-    </RadioGroup>
-
     <Button
         android:id="@+id/btnConverti"
         android:layout_width="wrap_content"
@@ -121,5 +90,15 @@
         android:onClick="clicked"
         android:text="@string/txtConvert"
         android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="106dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/tvTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="scambia"
+        app:srcCompat="@drawable/change" />
 
 </RelativeLayout>
