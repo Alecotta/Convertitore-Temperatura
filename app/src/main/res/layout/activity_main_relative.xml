@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutR"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="50sp" />
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvFar"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya_sc_italic"
+            android:text="@string/far"
+            android:textAlignment="viewEnd"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnGroup"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvGrades"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya_sc_italic"
+            android:text="@string/celsius"
+            android:textAlignment="viewEnd"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/etCelsius"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/c"
+            android:inputType="numberDecimal|numberSigned" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/btnGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="50dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btnCelsius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/alegreya_sc_italic"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/cF"
+            android:textAlignment="viewEnd"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:id="@+id/btnFar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/alegreya_sc_italic"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/fC"
+            android:textSize="25sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConverti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/darker_gray"
+        android:fontFamily="@font/alegreya_sc_italic"
+        android:onClick="clicked"
+        android:text="@string/txtConvert"
+        android:textSize="30sp" />
+
+</RelativeLayout>

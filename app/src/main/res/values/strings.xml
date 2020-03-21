@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Convertitore di Temperatura</string>
+    <string name="far">Fahrenheit°:</string>
+    <string name="celsius">Celsius°:</string>
+    <string name="c">°C</string>
+    <string name="cF">Da °C a °F:</string>
+    <string name="fC">Da °F a °C:</string>
+    <string name="txtConvert">Converti</string>
+    <string name="color">Colore</string>
+</resources>
