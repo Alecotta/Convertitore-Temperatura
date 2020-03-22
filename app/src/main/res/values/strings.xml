@@ -7,4 +7,6 @@
     <string name="fC">Da °F a °C:</string>
     <string name="txtConvert">Converti</string>
     <string name="color">Colore</string>
+    <string name="convertitore_di_temperatura">Convertitore di Temperatura</string>
+    <string name="change">change</string>
 </resources>

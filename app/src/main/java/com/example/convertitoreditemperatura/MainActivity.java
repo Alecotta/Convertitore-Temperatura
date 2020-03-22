@@ -33,12 +33,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_relative);
+        setContentView(R.layout.activity_main_constraint);
 
-        temp = (EditText) findViewById(R.id.etCelsius);
-        result = (TextView) findViewById(R.id.tvResult);
-        text1 = (TextView) findViewById(R.id.tvGrades);
-        text2 = (TextView) findViewById(R.id.tvFar);
+        init();
+    }
+
+    private void init() {
+        temp = (EditText) findViewById(R.id.temp);
+        result = (TextView) findViewById(R.id.result);
+        text1 = (TextView) findViewById(R.id.celsius);
+        text2 = (TextView) findViewById(R.id.far);
     }
 
     double value;
@@ -58,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (temp.getText().toString().isEmpty()) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Inserire una temperatura", Toast.LENGTH_LONG);
-            toast.show();
+            testoPopUp("Inserire una temperatura");
         }
 
         else if (cF){
@@ -76,15 +79,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void testoPopUp(String msg) {
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+    }
+
     @SuppressLint("SetTextI18n")
     public void scambia(View view) {
         if(cF){
+            temp.setText("");
+            result.setText("");
             temp.setHint("°F");
             text1.setText("Fahrenheit°:");
             text2.setText("Celsius°:");
             cF = false;
         }
         else{
+            temp.setText("");
+            result.setText("");
             temp.setHint("°C");
             text2.setText("Fahrenheit°:");
             text1.setText("Celsius°:");
