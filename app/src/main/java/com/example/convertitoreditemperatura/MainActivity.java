@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.Layout;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -17,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 import static java.lang.Double.parseDouble;
 
@@ -33,16 +35,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_main_constraint);
 
         init();
     }
 
     private void init() {
-        temp = (EditText) findViewById(R.id.temp);
-        result = (TextView) findViewById(R.id.result);
-        text1 = (TextView) findViewById(R.id.celsius);
-        text2 = (TextView) findViewById(R.id.far);
+        temp = findViewById(R.id.temp);
+        result = findViewById(R.id.result);
+        text1 = findViewById(R.id.celsius);
+        text2 = findViewById(R.id.far);
     }
 
     double value;
